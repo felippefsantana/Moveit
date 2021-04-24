@@ -1,8 +1,6 @@
 .experienceBar {
   display: flex;
   align-items: center;
-  /* nao tinha margem */
-  margin-bottom: 2.5rem;
 }
 
 .experienceBar span {
