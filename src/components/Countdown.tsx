@@ -3,7 +3,7 @@ import { CountdownContext } from '../contexts/CountdownContext';
 import styles from '../styles/components/Countdown.module.css';
 
 export function Countdown() {
-  const { 
+  const {
     minutes,
     seconds,
     hasFinished,

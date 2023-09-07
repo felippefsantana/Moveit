@@ -3,11 +3,12 @@ import { ChallengesContext } from "../contexts/ChallengesContext";
 import { CountdownContext } from "../contexts/CountdownContext";
 import Image from "next/image";
 import levelUpImage from "../../public/icons/level-up.svg";
+import bodyImage from "../../public/icons/body.svg";
+import eyeImage from "../../public/icons/eye.svg";
 import styles from "../styles/components/ChallengeBox.module.css";
 
 export function ChallengeBox() {
-  const { activeChallenge, resetChallenge, completeChallenge } =
-    useContext(ChallengesContext);
+  const { activeChallenge, resetChallenge, completeChallenge } = useContext(ChallengesContext);
   const { resetCountdown } = useContext(CountdownContext);
 
   function handleChallengeSuccesseded() {
@@ -27,7 +28,9 @@ export function ChallengeBox() {
           <header>Ganhe {activeChallenge.amount} xp</header>
 
           <main>
-            <img src={`icons/${activeChallenge.type}.svg`} alt="" />
+            {activeChallenge.type === "body" && <Image src={bodyImage} alt="Body"/>}
+            {activeChallenge.type === "eye" && <Image src={eyeImage} alt="Eye"/>}
+            {/* <img src={`icons/${activeChallenge.type}.svg`} alt="" /> */}
             <strong>Novo desafio</strong>
             <p>{activeChallenge.description}</p>
           </main>
